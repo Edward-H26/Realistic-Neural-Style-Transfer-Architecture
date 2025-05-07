@@ -91,12 +91,9 @@ Initial experiments showed:
 - Early layers (e.g., `conv_1`, `conv_2`) preserve structure
 - Deeper layers (e.g., `conv_4`, `conv_5`) inject more stylistic features
 
----
 
-## 🔧 Loss Functions
 ### 🔧 Multi-Layer Content Loss
-
-To capture a richer hierarchy of features, we implemented **multi-layer content loss**:
+Captures both low-level textures and high-level structure:
 
 $$
 L_{\text{content}}^{\text{multilayer}}(\tilde{p}, \tilde{x}) = \sum_{l \in L} w_l \left(
@@ -108,16 +105,7 @@ $$
 
 
 ### 🌀 Laplacian Edge Loss
-
-To address distortion from abstract styles, we added Laplacian edge loss using the kernel:
-
-```
-[ 0, -1,  0]
-[-1,  4, -1]
-[ 0, -1,  0]
-```
-
-This sharpens edges by penalizing differences in second derivatives:
+Encourages edge sharpness using second-order derivatives:
 
 $$
 L_{\text{laplacian}}
@@ -125,39 +113,28 @@ L_{\text{laplacian}}
 \sum_{c=1}^{C}\sum_{h=1}^{H}\sum_{w=1}^{W}  \bigl((\Delta\tilde{p})_{c,h,w} - (\Delta \tilde{x})  _{c,h,w} )^{2}
 $$
 
-Combined with content loss:
+
+### ➤ Sobel Edge Loss
+
+Improves over Laplacian by capturing directional gradients:
 
 $$
-L_{\text{content}} = \sum_l w_l \cdot \text{MSE}(F^l(\tilde{p}), F^l(\tilde{x})) + L_{\text{laplacian}}
+L_{\text{sobel}} = MSE(S_x(\tilde{p}), S_x(\tilde{x})) + MSE(S_y(\tilde{p}), S_y(\tilde{x}))
 $$
 
-### ➤ Sobel Edge Loss (Proposed)
-
-Empirical results showed that **Sobel edge loss** better preserved edge directionality and contours:
-
-$$
-L_{\text{sobel}} = MSE(Sₓ(\tilde{p}), Sₓ(\tilde{x})) + MSE(Sᵧ(\tilde{p}), Sᵧ(\tilde{x}))
-$$
+Empirical results showed $L_{\text{sobel}}$ outperformed $L_{\text{laplacian}}$ in preserving straight lines and contours, especially in architectural scenes.
 
 ### 🌫️ Total Variation (TV) Loss
 
-We also observed noise in uniform regions (e.g., sky). **TV loss** was added to reduce high-frequency artifacts:
+Suppresses high-frequency noise without blurring edges:
 
 $$
 L_{\text{tv}} = \sum [ (x_{h,w+1} - x_{h,w})^2 + (x_{h+1,w} - x_{h,w})^2 ]
 $$
 
-Full equation:
+## 🔺 Final Total Loss Function
 
-$$L_{\text{tv}} =
-\frac{1}{BCHW} \sum_{b,c,h,w}
-\left[(\tilde{x}_{b,c,h,w+1} - \tilde{x} _{b,c,h,w})^2 + (\tilde{x} _{b,c,h+1,w} - \tilde{x} _{b,c,h,w})^2\right]
-$$
-
-
-### 🧮 Final Loss Function
-
-Our final total loss combines all components for robust stylization:
+Our final formulation balances style, content, edge sharpness, and smoothness:
 
 $$L_{\text{total}} =
 \alpha \cdot L_{\text{content}} +
