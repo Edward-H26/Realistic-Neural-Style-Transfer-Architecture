@@ -84,7 +84,7 @@ We begin by loading a **Picasso painting** (style image) and a **skyline photo**
 
 ### 🧠 Style and Content Layer Design
 
-- **Content layer**: `conv_4` (from Gatys et al., 2016)
+- **Content layer**: `conv_1` to `conv_5`
 - **Style layers**: `conv_1` to `conv_5`
 
 Initial experiments showed:
