@@ -99,8 +99,7 @@ Initial experiments showed:
 To capture a richer hierarchy of features, we implemented **multi-layer content loss**:
 
 $$
-\mathcal{L}_{\text{content}}^{\text{multi-layer}}(\tilde{p}, \tilde{x}) =
-\sum_{l \in L} w_l \left(
+L_{\text{content}}^{\text{multilayer}}(\tilde{p}, \tilde{x}) = \sum_{l \in L} w_l \left(
 \frac{1}{N_l M_l} \sum_{i=1}^{N_l} \sum_{j=1}^{M_l}
 (F_{ij}^l - P_{ij}^l)^2
 \right)
@@ -121,10 +120,11 @@ To address distortion from abstract styles, we added Laplacian edge loss using t
 This sharpens edges by penalizing differences in second derivatives:
 
 $$
-L_{\text{laplacian}} =
-\frac{1}{C\,H\,W}
-\sum_{c,h,w} \left((\Delta\tilde{p})_{c,h,w} - (\Delta\tilde{x})_{c,h,w}\right)^2
+L_{\text{laplacian}}
+= \frac{1}{CHW}
+\sum_{c=1}^{C}\sum_{h=1}^{H}\sum_{w=1}^{W}  \bigl((\Delta\tilde{p})_{c,h,w} - (\Delta \tilde{x})  _{c,h,w} )^{2}
 $$
+
 Combined with content loss:
 
 $$
@@ -151,7 +151,7 @@ Full equation:
 
 $$L_{\text{tv}} =
 \frac{1}{BCHW} \sum_{b,c,h,w}
-\left[(\tilde{x}_{b,c,h,w+1} - \tilde{x}_{b,c,h,w})^2 + (\tilde{x}_{b,c,h+1,w} - \tilde{x}_{b,c,h,w})^2\right]
+\left[(\tilde{x}_{b,c,h,w+1} - \tilde{x} _{b,c,h,w})^2 + (\tilde{x} _{b,c,h+1,w} - \tilde{x} _{b,c,h,w})^2\right]
 $$
 
 
