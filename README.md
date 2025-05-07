@@ -105,7 +105,8 @@ $$
 (F_{ij}^l - P_{ij}^l)^2
 \right)
 $$
----
+
+
 
 ### 🌀 Laplacian Edge Loss
 
@@ -129,7 +130,6 @@ Combined with content loss:
 $$
 L_{\text{content}} = \sum_l w_l \cdot \text{MSE}(F^l(\tilde{p}), F^l(\tilde{x})) + L_{\text{laplacian}}
 $$
----
 
 ### ➤ Sobel Edge Loss (Proposed)
 
@@ -138,7 +138,6 @@ Empirical results showed that **Sobel edge loss** better preserved edge directio
 $$
 L_{\text{sobel}} = MSE(Sₓ(\tilde{p}), Sₓ(\tilde{x})) + MSE(Sᵧ(\tilde{p}), Sᵧ(\tilde{x}))
 $$
----
 
 ### 🌫️ Total Variation (TV) Loss
 
@@ -147,13 +146,14 @@ We also observed noise in uniform regions (e.g., sky). **TV loss** was added to 
 $$
 L_{\text{tv}} = \sum [ (x_{h,w+1} - x_{h,w})^2 + (x_{h+1,w} - x_{h,w})^2 ]
 $$
+
 Full equation:
 
 $$L_{\text{tv}} =
 \frac{1}{BCHW} \sum_{b,c,h,w}
 \left[(\tilde{x}_{b,c,h,w+1} - \tilde{x}_{b,c,h,w})^2 + (\tilde{x}_{b,c,h+1,w} - \tilde{x}_{b,c,h,w})^2\right]
 $$
----
+
 
 ### 🧮 Final Loss Function
 
