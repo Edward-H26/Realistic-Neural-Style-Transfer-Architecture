@@ -57,7 +57,7 @@ We address these issues by introducing:
 
    ```bash
    git clone https://github.com/HelenWu2004/CS445FinalProject.git
-   cd CS445FinalProject
+   cd Realistic-Neural-Style-Transfer-Architecture
    python -m venv .venv && source .venv/bin/activate  # optional
    pip install -r requirements.txt
    ```
@@ -65,7 +65,7 @@ We address these issues by introducing:
 3. **Run the notebook**
 
    ```bash
-   jupyter notebook notebooks/Realistic_NST.ipynb
+   jupyter notebook Result.ipynb
    ```
 
 4. **Adjust hyper‑parameters** (`alpha`, `beta`, `gamma`, `delta`) in the notebook or via CLI flags to fine‑tune the trade‑off between content fidelity and stylisation.
