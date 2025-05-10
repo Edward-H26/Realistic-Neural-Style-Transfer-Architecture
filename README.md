@@ -9,7 +9,10 @@ This project proposes a refined neural style transfer (NST) architecture that im
 - Reducing distortions common in patch-based or single-layer loss models
 
 <div align="center">
-  <img src="data/result.png" width="600" alt="Before and after style transfer"/>
+  <img src="data/result.jpg" width="600" alt="Before and after style transfer"/>
+  <img src="data/result2.jpg" width="600" alt="Before and after style transfer"/>
+  <img src="data/result3.jpg" width="600" alt="Before and after style transfer"/>
+  <img src="data/result4.jpg" width="600" alt="Before and after style transfer"/>
 </div>
 
 
@@ -67,7 +70,7 @@ We address these issues by introducing:
 
 4. **Adjust hyper‑parameters** (`alpha`, `beta`, `gamma`, `delta`) in the notebook or via CLI flags to fine‑tune the trade‑off between content fidelity and stylisation.
 
-> **Tip:** The default weights `α:1  β:5  γ:1  δ:0.01` work well for most photographs. Increase `γ` for sharper edges or `δ` for smoother backgrounds.
+> **Tip:** The default weights `α:1  β:60000  γ:20  δ:10` work well for most photographs. Increase `γ` for sharper edges or `δ` for smoother backgrounds.
 
 
 ## 📓 Notebook Walkthrough
@@ -151,6 +154,10 @@ $$
 - Outperformed TensorFlow NST and ChatGPT-4o in structural preservation
 - Better contour and edge clarity in abstract-to-photo transfers
 - Cleaner and more coherent textures with reduced distortion
+
+<div align="center">
+  <img src="data/result.png" width="600" alt="Table of metrics Before and after style transfer"/>
+</div>
 
 ---
 
