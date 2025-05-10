@@ -168,14 +168,43 @@ $$
 - Sobel loss + TV loss significantly boost photorealism and reduce noise
 
 ---
+### 📚 **References**
 
-## 📚 References
+- **Gatys et al. (2016)** – *Image Style Transfer Using Convolutional Neural Networks* [IEEE CVPR].  
+  [View Paper (doi:10.1109/CVPR.2016.265)](https://ieeexplore.ieee.org/document/7780634)
 
-- Gatys et al. (2016), *A Neural Algorithm of Artistic Style*
-- Johnson et al. (2016), *Perceptual Losses for Real-Time Style Transfer*
-- Zhang et al. (2021), *Multi-layer Feature Fusion*
-- Seif & Androutsos (2018), *Edge-Preserving Loss Functions*
-- Reimann et al. (2022), *Structural Consistency in Style Transfer*
+- **Liu et al. (2023)** – *Coarse-to-Fine Structure-Aware Artistic Style Transfer* [Applied Sciences].  
+  [View Paper (doi:10.3390/app13020952)](https://doi.org/10.3390/app13020952)
+
+- **C. Lad (2019)** – *Understanding Neural Style Transfer* [Analytics Vidhya].  
+  [Read on Medium](https://medium.com/analytics-vidhya/understanding-neural-style-transfer-3061cd92648)
+
+- **P. Baheti (2021)** – *Neural Style Transfer: Everything You Need to Know* [V7 Labs Blog].  
+  [Read the Guide](https://www.v7labs.com/blog/neural-style-transfer)
+
+- **Kotiyal et al. (2021)** – *Neural Style Transfer with Structure Preservation of Content Image* [IJERT].  
+  [View Paper (doi:10.17577/IJERTCONV9IS07032)](https://www.ijert.org/neural-style-transfer-with-structure-preservation-of-content-image)
+
+- **Zhang et al. (2021)** – *Dive into Deep Learning* [arXiv].  
+  [Read on arXiv](https://arxiv.org/abs/2106.11342)
+
+- **Seif & Androutsos (2018)** – *Edge-Based Loss Function for Single Image Super-Resolution* [ICASSP].  
+  [View Paper (doi:10.1109/ICASSP.2018.8461664)](https://doi.org/10.1109/ICASSP.2018.8461664)
+
+- **X. Wang (2007)** – *Laplacian Operator-Based Edge Detectors* [IEEE TPAMI].  
+  [View Paper (doi:10.1109/TPAMI.2007.1027)](https://doi.org/10.1109/TPAMI.2007.1027)
+
+- **BenHajyoussef & Saidani (2024)** – *Recent Advances on Image Edge Detection* [InTechOpen].  
+  [View Paper (doi:10.5772/intechopen.1003763)](https://doi.org/10.5772/intechopen.1003763)
+
+- **T. Malche (2024)** – *Edge Detection in Image Processing: An Introduction* [Roboflow Blog].  
+  [Read the Blog](https://blog.roboflow.com/edge-detection/)
+
+- **R. Fisher et al. (2003)** – *Laplacian of Gaussian – Spatial Filters*.  
+  [View Online](https://homepages.inf.ed.ac.uk/rbf/HIPR2/log.htm)
+
+- **Reimann et al. (2022)** – *Controlling Strokes in Fast Neural Style Transfer Using Content Transforms* [The Visual Computer].  
+  [View Paper (doi:10.1007/s00371-022-02518-x)](https://doi.org/10.1007/s00371-022-02518-x)
 
 ---
 
