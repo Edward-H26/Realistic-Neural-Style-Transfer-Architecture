@@ -1,4 +1,4 @@
-# 🎨 CS445 Final Project: Realistic Neural Style Transfer
+# 🎨 Realistic Neural Style Transfer
 
 ## 📌 Project Overview
 
