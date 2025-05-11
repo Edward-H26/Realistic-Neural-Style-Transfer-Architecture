@@ -56,7 +56,7 @@ We address these issues by introducing:
 1. **Clone & install dependencies**
 
    ```bash
-   git clone https://github.com/HelenWu2004/CS445FinalProject.git
+   git clone https://github.com/Edward-H26/Realistic-Neural-Style-Transfer-Architecture.git
    cd Realistic-Neural-Style-Transfer-Architecture
    python -m venv .venv && source .venv/bin/activate  # optional
    pip install -r requirements.txt
